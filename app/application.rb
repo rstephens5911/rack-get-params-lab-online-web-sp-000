@@ -25,9 +25,10 @@ class Application
     end
 
     if req.path.match(/add/)
-      @@item.each do |item|
-        if @@item.include?(item)
-          @@cart << item
+      item_to_add = req.params["item"]
+        if @@item.include?(item_to_add)
+          @@cart << item_to_add
+          resp.write "added #{item_to_add} "
         else
           resp.write "Item not found."
         end
