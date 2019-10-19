@@ -30,10 +30,10 @@ class Application
           @@cart << item_to_add
           resp.write "added #{item_to_add} "
         else
-          resp.write "Path not found."
+          resp.write "We don't have that item!"
         end
       end
-    resp.finish
+        resp.finish
     end
 
   def handle_search(search_term)
